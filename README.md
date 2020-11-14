@@ -1,5 +1,5 @@
 # youtube-dl-script
-This script will simplify the process of downloading videos with youtube-dl command line
+If you ever find annoying using youtube-dl command line these scripts will help you out 
 
 Requirements:
 youtube-dl and ffmpeg
