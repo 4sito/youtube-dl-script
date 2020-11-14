@@ -64,19 +64,19 @@ fi
 		then 
 		type="video"
 		location="~/Video"
-		clear 
+		 
                 printf "Do you want to chhose which file format to download or prefer to download the best available?"
 		printf "\n1| Best"
 		printf "\n2| List all types(not recommended for whole playlists)\n"
                 read video_choice
-		if [ $video_choice -eq 2 ] 
-		then
-                pritnf  "the formats available for your video are:" 
-                youtube-dl -F $video_url
-		printf "\ndecide which file format to download:"
-		read  quality
-		else quality="bestvideo+bestaudio"
-                fi
+			if [ $video_choice -eq 2 ] 
+			then
+                		pritnf  "the formats available for your video are:" 
+                		youtube-dl -F $video_url
+				printf "\ndecide which file format to download:"
+				read  quality
+			else quality="bestvideo+bestaudio"
+                	fi
        else
        printf "hippity hoppity! That's not what I asked..."
 	pkill -f super_youtube
