@@ -1,5 +1,5 @@
 #! /bin/bash
-
+#Hi there, This scripts will make your life easier for downloading videos/songs with youtube-dl
 
 if [ ! -e "default_playlist.txt" ]
  then
@@ -23,7 +23,7 @@ fi
 		printf "What do you want to download?\n"
 		printf "1| AUDIO\n"
 		printf "2| VIDEO\n"
-read format_ver
+	read format_ver
 	if [ $format_ver -eq 1 ];
 		then 
 		 
@@ -67,7 +67,7 @@ read format_ver
 		clear 
                 printf "Do you want to chhose which file format to download or prefer to download the best available?"
 		printf "\n1| Best"
-		printf "\n2| List all types(not recommended for whole playlists"
+		printf "\n2| List all types(not recommended for whole playlists)\n"
                 read video_choice
 		if [ $video_choice -eq 2 ] 
 		then
@@ -89,15 +89,14 @@ printf "Do you want your $type to be saved to\n1| default location ("$location")
         then 
 		echo be aware that the location must be writeable therefore not owned by root but by your user
 		echo Custom Location:
-		read location:
+		read location
 	fi
 
 echo starting your download in 3,
 echo 2, 
 echo 1...
 clear
-		options="$quality $video_url $location"
-		echo $options >> options.txt
+		
 	youtube-dl -f $quality $video_url -w -o "$location/%(title)s.%(ext)s"
 
 echo Thank you, you can find the downloaded $type at $location, bye bye!
