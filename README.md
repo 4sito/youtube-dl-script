@@ -1,4 +1,4 @@
-# youtube-dl-script
+# youtube-dl-helper
 If you ever find annoying using youtube-dl command line these scripts will help you out 
 
 Requirements:
