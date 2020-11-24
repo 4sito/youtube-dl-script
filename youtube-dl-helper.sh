@@ -61,7 +61,7 @@ entries=("Video Download" "Audio Download" "Playlist Download" "Set favourite Pl
 					read url
 
 				echo starting playlist download...
-					youtube-dl -f $standard_audio $url -w -o "$m_location/%(title)s.%(ext)s"
+					youtube-dl --yes-playlist -f $standard_audio $url -w -o "$m_location/%(title)s.%(ext)s"
                                 echo Thanks, you can find the downloaded playlist songs at $m_location, bye bye!
 				break
 				;;
