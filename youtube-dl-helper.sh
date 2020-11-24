@@ -40,25 +40,7 @@ entries=("Video Download" "Audio Download" "Playlist Download" "Set favourite Pl
 				echo input url:
 					read url
 
-				PS3='Choose a quality: '
-									video_quality=("Best" "mp4")
-										select fav in "${video_quality[@]}"; do
-												case $fav in
-														"Best")
-															standard_video="bestvideo+bestaudio"
-															break
-															;;
- 														"mp4")
-															standard_video="mp4"
-															break
-															;;
-															*)
-															standard_video="mp4"
-															echo proceeding with standard
-															break
-															;;
-												esac
-										done
+
 				echo starting download...
 					youtube-dl -f $standard_video $url -w -o "$v_location/%(title)s.%(ext)s" -w
 				echo Thanks, you can find the downloaded file at $v_location, byee!
@@ -68,41 +50,7 @@ entries=("Video Download" "Audio Download" "Playlist Download" "Set favourite Pl
                                 echo input url:
                                         read url
 
-																PS3='Choose a quality: '
-																					audio_quality=("Best" "m4a" "flac" "mp3" "wav" "ogg")
-																						select fav in "${audio_quality[@]}"; do
-																								case $fav in
-																										"Best")
-																											standard_audio="bestaudio"
-																											break
-																											;;
-																										"m4a")
-																											standard_audio="m4a"
-																											break
-																											;;
-																										"flac")
-																											standard_audio="flac"
-																											break
-																											;;
-																										"mp3")
-																											standard_audio="mp3"
-																											break
-																											;;
-																										"wav")
-																												standard_audio="wav"
-																												break
-																												;;
-																										"ogg")
-																												standard_audio="ogg"
-																												break
-																												;;
-																										*)
-																												standard_audio="mp3"
-																												echo wrong input proceeding with standard
-																												break
-																												;;
-																								esac
-																						done
+
                                 echo starting download...
                                         youtube-dl -f $standard_audio $url -w  -o "$m_location/%(title)s.%(ext)s"
                                 echo Thanks, you can find the downloaded file at $m_location, byee!
@@ -196,7 +144,7 @@ entries=("Video Download" "Audio Download" "Playlist Download" "Set favourite Pl
 
 																		break
 																		;;
-																	*) 
+																	*)
                                    echo Hippity, Hoppity, retry with a valid option
                                    ;;
 																esac
@@ -246,8 +194,8 @@ entries=("Video Download" "Audio Download" "Playlist Download" "Set favourite Pl
 
 																							break
 																							;;
-                                              
-                                              *) 
+
+                                              *)
                                               echo Hippity, Hoppity, retry with a valid option
                                               ;;
 
@@ -278,11 +226,11 @@ entries=("Video Download" "Audio Download" "Playlist Download" "Set favourite Pl
 
 																							break
 																							;;
-                                              
-                                              *) 
+
+                                              *)
                                               echo Hippity, Hoppity, retry with a valid option
                                               ;;
-                                                    
+
 																					esac
 																		  done
 															printf "\n\n\n"
@@ -308,8 +256,8 @@ entries=("Video Download" "Audio Download" "Playlist Download" "Set favourite Pl
 
 																										break
 																										;;
-                                                    
-                                                    *) 
+
+                                                    *)
                                                     echo Hippity, Hoppity, retry with a valid option
                                                     ;;
 																								esac
